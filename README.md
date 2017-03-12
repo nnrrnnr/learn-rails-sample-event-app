@@ -1,5 +1,7 @@
 # learn-rails-sample-event-app
-Rails学習　イベント告知アプリ
+## Overview
+Rails学習のためにサンプルとしてイベント告知アプリを作成する
+
 ## 実装する主な仕様
 - ユーザは作成されたイベント情報を閲覧することができる
     - デフォルトで開始時間が現在時刻以降のイベントが開始時間の昇順で表示される
@@ -17,3 +19,20 @@ Rails学習　イベント告知アプリ
 - 退会したユーザーが作成したイベントはそのまま残る
 - イベントを作成したユーザーが退会している場合、作成したユーザーの情報として「退会したユーザーです」と表示される
 - イベントに参加したユーザーが退会している場合、参加したユーザーの情報として「退会したユーザーです」と表示される
+
+## ルーティング仕様
+|path|method|description|
+|---|---|---|
+|/|get|イベント一覧表示|
+|/auth/:provider/callback|get|ログイン/ユーザー作成処理を実行|
+|/logout|get|ログアウト|
+|/events/new|get|イベント作成用のフォームを表示|
+|/events|post|イベント作成処理を実行|
+|/events/:id|get|イベント詳細ページを表示|
+|/events/:id/edit|get|イベント編集用のフォームを表示|
+|/events/:id|patch|イベント編集処理を実行する|
+|/events/:id|delete|イベント削除処理を実行する|
+|/events/:event_id/tickets|post|イベント参加処理を実行する|
+|/events/:event_id/tickets/:id|delete|イベント参加キャンセルを実行する|
+|/user/retire|get|退会用画面を表示する|
+|/user|delete|退会処理を実行する|
